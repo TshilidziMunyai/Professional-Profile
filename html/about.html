@@ -21,18 +21,20 @@
             padding: 30px;
             padding-right: 30%;
             font-family: "Poppins", sans-serif;
-            background-color: #201e1e;
+            /* background-color: #B0E0E6; */
+            background: linear-gradient(to right, #D8B5FF, #1EAE98);
+
             color: #100f0f;
             display: flex;
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
-            background-image: url(../images/Tshilidzi_picture.jpg);
-            background-size: 30%;
+            /* background-image: url(../images/Tshilidzi_picture.jpg); */
+            /* background-size: 26%; */
             background-repeat: no-repeat;
             /* background-position: center right;  */
-            background-position: 1100px 60%;
+            /* background-position: 1100px 60%; */
 
             /* second part is height */
         }
@@ -40,11 +42,9 @@
         /* this is the container that encapsulates everything */
         .container {
             max-width:800px;
-            margin-top: -0%;
+            margin-top: -4%;
             padding-right: 15%;
-            background: rgba(157, 62, 62, 1.5em);
             border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 1rem);
             text-align: left;
             font-size: 0.88rem;
         }
@@ -53,7 +53,7 @@
         .container h2 {
             font-size: 2rem; 
             margin-top: px;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
             color: #167d39; 
         }
 
@@ -61,26 +61,95 @@
         .container p {
             font-size: 1rem; 
             line-height: 1.6; 
-            margin-bottom: 15px;
-            color: #fbf9fb;
+            margin-bottom: 10px;
+            color:white;
             /* font-size: 100%; */
+        }
+        .container p:hover{
+            color: #000;
         }
 
         /* this is the links */
         .container a {
-            color: #f4e107; 
+            color:#167d39; 
+            font-size: large;
             text-decoration: none;
         }
 
 
         h1 {
-            color: #fbf9fb;
+            color: #167d39;
             font-family: "Poppins", sans-serif;
             font-size:3em;
-            margin-bottom: 1px;
+            margin-bottom: 0.5px;
 
         }
 
+        .download-btn{
+            width: 100%;
+            padding: 10px;
+            border-radius: 50px;
+            background-color: rgba(4, 4, 4, 0);
+            color: #167d39;
+            border: #0b0b0b solid 1px;
+            font-family: "Poppins", sans-serif;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        .download-btn:hover{
+            background-color: #ffffff;
+            color: #000;
+
+        }
+        .container {
+            /* margin: top 5px; ; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: -10%;
+            /* width: 150%; */
+        }
+
+        .block {
+            /* width: 80%;
+            height: 30%; */
+            background-color: black;
+            border-radius: 10px;
+            padding-right: 5px;
+            text-align: center;
+            color: #ccc;
+            transition: background-color 0.3s;
+        }
+
+        .block:hover {
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.3);
+        }
+
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; 
+        }
+
+        .image-container {
+            width: 300px; 
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 100%;
+            margin-top: -45%;
+        }
+
+        .profile-pic {
+            width: 150%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+        }
     </style>
     <header>
         <a href="index.html">
@@ -100,46 +169,55 @@
 </head>
 <body>
     <div class="container">
+        <div class="block">
         <h1>About Me</h1>
-        <p>
-            Hi! I’m <strong>Tshilidzi Munyai</strong>, a passionate developer with a solid foundation in 
-            <strong>International Economics and Trade</strong>. My journey into technology began with a strong curiosity 
-            about solving real-world problems through innovative coding solutions. Currently, I’m a 
-            <strong>software developer</strong> at a company of my dreams <strong>BBD software solutions</strong>, fairly earger to tackle everything this opportunity will offer
-        </p>
+            <p>
+                Hi! I’m <strong>Tshilidzi Munyai</strong>, a passionate developer with a solid foundation in 
+                <strong>International Economics and Trade</strong>. My journey into technology began with a strong curiosity 
+                about solving real-world problems through innovative coding solutions. Currently, I’m a 
+                <strong>software developer</strong> at a company of my dreams <strong>BBD software solutions</strong>, fairly earger to tackle everything this opportunity will offer
+            </p>
+        </div>
     
-        <h2>Skills and Expertise</h2>
-        <div>
-            <p style="margin: 0;"><strong>Programming Languages</strong>: Python, Java, SQL, and JavaScript</p>
-            <p style="margin: 0;"><strong>Frameworks and Tools</strong>: Maven, Docker, and JUnit</p>
-            <p style="margin: 0;"><strong>Database Management</strong>: SQL, Relational Database Design</p>
-            <p style="margin: 0;"><strong>Other Technologies</strong>: HTML, CSS, Git</p>
+        <div class="block">
+            <h2>Skills and Expertise</h2>
+            <div>
+                <p style="margin: 0;"><strong>Programming Languages</strong>: Python, Java, SQL, and JavaScript</p>
+                <p style="margin: 0;"><strong>Frameworks and Tools</strong>: Maven, Docker, and JUnit</p>
+                <p style="margin: 0;"><strong>Database Management</strong>: SQL, Relational Database Design</p>
+                <p style="margin: 0;"><strong>Other Technologies</strong>: HTML, CSS, Git</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <h2>My Goals</h2>
+            <p>
+                I aspire to create innovative software that solves complex problems. My dream is to 
+                contribute to transformative projects that positively impact businesses and communities.
+            </p>
+        </div>
+    
+        <div class="block">
+            <h2>Beyond Coding</h2>
+            <p>
+                When I’m not immersed in code, I enjoy expressing creativity through writing 
+                and painting, continuously expanding my knowledge of emerging technologies, 
+                and collaborating with diverse teams to bring ideas to life.       
+            </p>
         </div>
         
-        
     
-   
-        <h2>My Goals</h2>
         <p>
-            I aspire to create innovative software that solves complex problems. My dream is to 
-            contribute to transformative projects that positively impact businesses and communities.
+            Connect with me on <a href="https://www.linkedin.com/in/tshilidzi-munyai-134285210" target="_blank">LinkedIn</a>. 
         </p>
+        <a href="Tshilidzi-Munyai-Resume.pdf">
+             <button class="download-btn">Download CV</button>
+         </a>
+        </div>
+        <div class="image-container">
+            <img src="../images/Tshilidzi_picture.jpg" alt="Tshilidzi Munyai" class="profile-pic">
+        </div>
+
     
-        <h2>Beyond Coding</h2>
-        <p>
-            When I’m not immersed in code, I enjoy expressing creativity through writing 
-            and painting, continuously expanding my knowledge of emerging technologies, 
-            and collaborating with diverse teams to bring ideas to life.       
-         </p>
-        
-    
-        <p>
-             Connect with me on <a href="https://www.linkedin.com/in/tshilidzi-munyai-134285210" target="_blank">LinkedIn</a>. 
-        </p>
-    </div>
-    
-    <!-- <a href="contact.html">
-        <button class="getstarted-btn">Contact Me</button>
-    </a> -->
 </body>
 </html>

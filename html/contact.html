@@ -9,18 +9,19 @@
     <style>
         
         body {
-            margin: 0;
+            margin: -6%;
             padding: 0;
             font-family: "Poppins", sans-serif;
-            background-color: #403c3c;
-            background-image: url(../images/blur2.jpg);
-            background-repeat: no-repeat;
-            background-size: 150%;
-            color: #ffffff;
+            background: linear-gradient(to right, #D8B5FF, #1EAE98);
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            flex-direction: column; 
+            justify-content: flex-start; 
+            align-items: center; 
+            height: 120vh; 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            padding-top: 250px; 
         }
 
          /* this is the container that encapsulates everything */
@@ -29,21 +30,22 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
-            background-color: #4a4747;
+            background-color: rgba(255, 255, 255, 0.2);
+
             border-radius: 15px;
-            padding: 50px;
+            padding: 40px;
             width: 70%;
             max-width: 1700px;
             margin-top: 20px;
         }
         /* this is the heading */
         h1 {
-            color: #e0b030;
-            margin-top: 180px;
-            margin-bottom: 1px;
+            color: black;
+            margin-top: 80px;
+            margin-bottom: -10px;
             font-size: 36px;
         }
-        /* four cards coontainer */
+        /* four cards container */
         .card-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr); 
@@ -96,7 +98,7 @@
             font-weight: bold;
         }
 
-        /* for the imputs on the form */
+        /* for the inputs on the form */
         .form-group input,
         .form-group textarea {
             width: 95%;
@@ -118,7 +120,11 @@
         }
 
         .submit-btn:hover {
-            background-color: #ffffff;
+            background-color: white;
+            color: black;
+            /* box-shadow: grey; */
+            /* border: 1px #e0b030 outset; */
+
         }
 
 
