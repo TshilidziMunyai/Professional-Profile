@@ -80,29 +80,6 @@
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
-        p1{
-            color: black;
-            margin-right:  auto;
-        }
-
-        p1:hover{
-            background-color: rgb(119, 113, 113);
-            color: black;
-            transform: scale(1.3);
-
-        }
-
-        p2{
-            color: #000;
-            margin-right:  auto;
-
-        }
-        p2:hover{
-            background-color: rgb(119, 113, 113);
-            color: black;
-            transform: scale(1.3);
- 
-        }
 
         h3{
             color: white;
@@ -111,18 +88,31 @@
         }
 
        .block{
-            /* padding: 10px; */
-            background-color: black;
-            border-radius: 10px;
+            padding: 4px;
+            width: 200px; 
+            height: 100px;
+            background-color: grey;
+            border-radius: 6px;
             color: #ccc;
-            transition: background-color 0.3s;
         }
 
         .block:hover {
-            color: grey;
-            background-color: rgba(255, 255, 255, 1);
+            color: black;
+            background-color: rgba(255, 255, 255, 0.5);
             transform: scale(1.3);
         }
+
+        .block:hover p,
+        .block:hover #location,
+        .block:hover #weather {
+            color: black !important; 
+        }
+        .weather-text {
+            font-size: 1em;
+            white-space: pre-line; 
+            color: white;
+        }
+
 
 
     </style>
@@ -145,64 +135,48 @@
         <h1>Tshilidzi Munyai</h1>
         <p>“Welcome to my professional profile”</p>
 
-        <body>
-            <!-- <h2>Would you like to know your Location</h2>
-            <div class="buttons">
-                <button class="btn" onclick="getLocation()">Click Here</button>
-            </div>  -->
-            <div class="block">
-                <h3>Your weather forecast</h3>
-                <p1 id = "location"></p1>
-                <p2 id = "weather"> </p2>
-
-            </div>
-            
-            <script>
-               async function getLocation(){
+        <h3>Your weather forecast</h3>
+        <div class="block">
+            <p id="location" class="weather-text"></p>
+            <p id="weather" class="weather-text"></p>
+        </div>
+        
+        <script>
+            async function getLocation(){
                 var endpoint = 'http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone';
-
-                        try {
-                            const response = await fetch(endpoint);
-                            if (!response.ok) {
-                            throw new Error(`Response status: ${response.status}`);
-                            }
-
-                            const json = await response.json();
-                            document.getElementById("location").innerHTML = json.country + ", " + json.timezone;
-                            return json;
-
-                            
-                        } catch (error) {
-                            console.error(error.message);
-                        }
+                try {
+                    const response = await fetch(endpoint);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
                     }
-                    
-                    getLocation()
-                    
-                    async function getWeather() {
-                        const data = await getLocation();
-                        console.log(data);
-                        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&units=metric&&lon=${data.lon}&appid=d9873950759da248c4db3f8a8b8476ca`
-                        try {
-                            const response = await fetch(url);
-                            if (!response.ok) {
-                                throw new Error(`Response status: ${response.status}`);
-                            }
-                            
-                            const json = await response.json();
-                            
-                            document.getElementById("weather").innerHTML = json.main.temp + ", " + json.weather[0].description;
-                            // -273.15
-
+                    const json = await response.json();
+                    document.getElementById("location").innerHTML = json.country + " * " + json.timezone;
+                    return json;
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+            
+            async function getWeather() {
+                const data = await getLocation();
+                console.log(data);
+                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&units=metric&lon=${data.lon}&appid=d9873950759da248c4db3f8a8b8476ca`;
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+                    const json = await response.json();
+                    document.getElementById("weather").innerHTML = `${json.main.temp}°C <br> ${json.weather[0].description}`;
                     console.log(json);
                 } catch (error) {
                     console.error(error.message);
                 }
-                }
-                getWeather()
-
-
-            </script>
+            }
+        
+            getWeather();
+        </script>
+        
             
             </body>        
         </div>
